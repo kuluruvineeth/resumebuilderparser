@@ -9,19 +9,29 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@heroicons/react": "^2.1.1",
+    "@react-pdf/renderer": "^3.1.14",
+    "@reduxjs/toolkit": "^2.0.1",
+    "@tailwindcss/aspect-ratio": "^0.4.2",
+    "next": "14.0.4",
+    "pdfjs": "^2.5.0",
+    "pdfjs-dist": "^3.7.107",
     "react": "^18",
+    "react-contenteditable": "^3.3.7",
     "react-dom": "^18",
-    "next": "14.0.4"
+    "react-frame-component": "^5.2.6",
+    "react-redux": "^9.0.4",
+    "tailwind-scrollbar": "^3.0.5"
   },
   "devDependencies": {
-    "typescript": "^5",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "autoprefixer": "^10.0.1",
+    "eslint": "^8",
+    "eslint-config-next": "14.0.4",
     "postcss": "^8",
     "tailwindcss": "^3.3.0",
-    "eslint": "^8",
-    "eslint-config-next": "14.0.4"
+    "typescript": "^5"
   }
 }
