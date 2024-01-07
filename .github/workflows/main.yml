@@ -15,7 +15,7 @@ jobs:
       - name: Install & build
         uses: actions/checkout@v2
       - run: npm install --frozen-lockfile
-      - run: npm build && npm install --production --ignore-scripts --prefer-offline
+      - run: npm run build && npm install --production --ignore-scripts --prefer-offline
 
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v1
