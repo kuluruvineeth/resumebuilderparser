@@ -1,9 +1,7 @@
 {
   "family": "task-definition-node",
   "networkMode": "awsvpc",
-  "requiresCompatibilities": [
-    "FARGATE"
-  ],
+  "requiresCompatibilities": ["FARGATE"],
   "cpu": "512",
   "memory": "1024",
   "executionRoleArn": "arn:aws:iam::807314995289:role/Policy-Ecs-Execution-Role",

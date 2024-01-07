@@ -19,7 +19,7 @@ locals {
   ecs_network_mode = "awsvpc"
   ecs_cpu = 512
   ecs_memory = 1024
-  ecs_container_name = "resumebuilderparser-image"
+  ecs_container_name = "resumebuilderparserimage"
   ecs_log_group = "/aws/ecs/${var.project_id}-${var.env}"
   ecs_log_retention = 1
 }

@@ -18,3 +18,7 @@ output "aws_iam_access_key" {
     value = module.ecr_ecs_ci_user.aws_iam_access_key
     sensitive = true
 }
+
+output "alb_url" {
+  value = module.alb.lb.dns_name
+}
