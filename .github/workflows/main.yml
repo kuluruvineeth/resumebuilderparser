@@ -37,19 +37,15 @@ jobs:
         run: |
           docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
           docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
-          echo "::set-ouput name=image::$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG"
+          echo "::set-output name=image::$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG"
 
       - name: Fill in the new image ID in the Amazon ECS task definition
         id: task-def
-        env:
-          ECR_REGISTRY: ${{steps.login-ecr.outputs.registry}}
-          ECR_REPOSITORY: web/node-app/resumebuilderparser
-          IMAGE_TAG: ${{github.sha}}
         uses: aws-actions/amazon-ecs-render-task-definition@v1
         with:
           task-definition: infra/task-definitions/service.latest.json
           container-name: resumebuilderparser-image
-          image: 807314995289.dkr.ecr.us-east-1.amazonaws.com/web/node-app/resumebuilderparser:$IMAGE_TAG
+          image: ${{steps.build-image.outputs.image}}
 
       - name: Deploy Amazon ECS task definition
         uses: aws-actions/amazon-ecs-deploy-task-definition@v1
