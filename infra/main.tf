@@ -159,6 +159,7 @@ resource "aws_ecs_cluster" "web_cluster" {
     name = "containerInsights"
     value = "enabled"
   }
+  
 }
 
 resource "aws_ecs_service" "web_ecs_service" {
